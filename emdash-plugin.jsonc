@@ -2,9 +2,8 @@
 	"$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
 
 	"slug": "agent-ready",
-	// PLACEHOLDER: replace with the DID of the workpods.ai Atmosphere account before publishing.
-	// See "Publishing (owner)" in README.md.
-	"publisher": "did:plc:REPLACE-ME",
+	// The WorkPods Atmosphere account (handle workpods.ai).
+	"publisher": "did:plc:fk3sarba5elb3q26v7gkgz74",
 
 	"name": "Agent Ready by WorkPods",
 	"description": "Finds what search engines, AI answers and agents trip on in your content: titles, descriptions, headings, alt text, links.",

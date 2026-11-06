@@ -81,19 +81,18 @@ the site. Then, in the site's `astro.config.mjs`, `import agentReady from "agent
 Bump `version` in `package.json` for each release, and the major version when `capabilities`
 changes, because installed sites agreed to the old list.
 
-## Publishing (owner)
+## Publishing
 
-1. Create the public repository `WorkPodsAgents/emdash-agent-ready` and push this one to it.
-2. Create a Bluesky account (`yours@workpods.ai`) and set its handle to `workpods.ai`. Bluesky
-   shows a DNS TXT record to add: `_atproto.workpods.ai` with the value `did=did:plc:...`.
-3. In this directory, run `npx emdash-plugin login workpods.ai` and approve in the browser.
-4. Replace the placeholder `"publisher": "did:plc:REPLACE-ME"` in `emdash-plugin.jsonc` with the
-   account's DID (`npx emdash-plugin whoami` prints it). Add an `email` to `security` if you want
-   one next to the URL.
-5. Run `npm test`, then `npx emdash-plugin publish`.
-6. Watch the listing checks with
-   `npx emdash-plugin info workpods.ai agent-ready --version 0.1.0 --watch` until the plugin is
-   live at `https://plugins.emdashcms.com/plugins/@workpods.ai/agent-ready`.
+The plugin is published by the WorkPods Atmosphere account, handle `workpods.ai`
+(`did:plc:fk3sarba5elb3q26v7gkgz74`, set as `publisher` in `emdash-plugin.jsonc`). The handle is
+proved by the DNS TXT record `_atproto.workpods.ai` = `did=did:plc:fk3sarba5elb3q26v7gkgz74`.
+
+1. Use Node.js 22.22.2 or later (`emdash-plugin publish` needs it).
+2. In this directory, run `npx emdash-plugin login workpods.ai` and approve in the browser.
+3. Bump `version` in `package.json`, run `npm test`, then `npx emdash-plugin publish`.
+4. Watch the listing checks with
+   `npx emdash-plugin info workpods.ai agent-ready --version <version> --watch` until the
+   release is live at `https://plugins.emdashcms.com/plugins/@workpods.ai/agent-ready`.
 
 ## Licence
 
