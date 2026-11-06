@@ -1,0 +1,42 @@
+{
+	"$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+
+	"slug": "agent-ready",
+	// PLACEHOLDER: replace with the DID of the workpods.ai Atmosphere account before publishing.
+	// See "Publishing (owner)" in README.md.
+	"publisher": "did:plc:REPLACE-ME",
+
+	"name": "Agent Ready by WorkPods",
+	"description": "Finds what search engines, AI answers and agents trip on in your content: titles, descriptions, headings, alt text, links.",
+	"keywords": ["seo", "geo", "axo", "ai-agents", "content-quality"],
+	"license": "Apache-2.0",
+	"author": { "name": "WorkPods", "url": "https://workpods.ai/tools/agent-ready" },
+	"security": { "url": "https://github.com/WorkPodsAgents/emdash-agent-ready/security" },
+	"repo": "https://github.com/WorkPodsAgents/emdash-agent-ready",
+	"sections": {
+		"installation": { "file": "./docs/installation.md" },
+		"faq": { "file": "./docs/faq.md" },
+		"changelog": { "file": "./CHANGELOG.md" },
+	},
+
+	// Read-only and offline: the checks need entry fields and the content schema, nothing else.
+	"capabilities": ["content:read", "schema:read"],
+	"allowedHosts": [],
+	"storage": {},
+
+	"admin": {
+		"pages": [{ "path": "/findings", "label": "Agent Ready", "icon": "gauge" }],
+		"widgets": [{ "id": "summary", "title": "Agent Ready", "size": "half" }],
+	},
+
+	"release": {
+		"artifacts": {
+			"icon": { "file": "./icon.png" },
+			"screenshots": [
+				{ "file": "./images/findings.png", "lang": "en" },
+				{ "file": "./images/findings-detail.png", "lang": "en" },
+				{ "file": "./images/widget.png", "lang": "en" },
+			],
+		},
+	},
+}
